@@ -32,19 +32,19 @@
     font-size: 14px;
     text-align: center;
     overflow: hidden;
-    grid-row: 2/4;
+    grid-row: 2/3;
 }
 .name-registerInput{
     @extend .default-input;
-    grid-row: 4/6;
+    grid-row: 3/5;
 }
 .email-registerInput {
     @extend .default-input;
-    grid-row: 6/8;
+    grid-row: 5/7;
 }
 .password-registerInput {
     @extend .default-input;
-    grid-row: 8/10;
+    grid-row: 7/9;
 }
 .LoginBtn {
     border: none;
@@ -52,13 +52,13 @@
     background-color: blue;
     color: $MainColor;
     font-size: $LargeFontSize;
-    grid-row: 10/12;
+    grid-row: 11/13;
 }
 
 .auth-error-message {
     font-size: $MediumFontSize;
     color: red;
-    grid-row: 8/9;
+    grid-row: 9/11;
 }
 
 .name-registerInput-error,
