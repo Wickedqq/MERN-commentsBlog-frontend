@@ -1,10 +1,18 @@
 @import '..//../SCSS/mixins.scss';
 @import '..//../SCSS/variables.scss';
 
-.HomePage-wrapper {
+.homePage-wrapper {
     @include gridBox(2, 1fr, 0, 250px);
     width: 100%;
     min-height: 90vh;
     height: fit-content;
     background-color: rgb(230, 220, 200);
+}
+.homePage-inscription {
+    position: absolute;
+    bottom: 10px;
+    justify-self: center;
+    font-size: $BigFontSize;
+    font-family: $FontFamily;
+    color: $MainColor;
 }

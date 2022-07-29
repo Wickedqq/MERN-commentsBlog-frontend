@@ -29,7 +29,7 @@ export const HomePage = () => {
   };
 
   return (
-    <div className="HomePage-wrapper">
+    <div className="homePage-wrapper">
       {posts.map((obj, i) => {
         return isLoading ? (
           <Skeleton key={i} />
@@ -46,6 +46,7 @@ export const HomePage = () => {
           />
         );
       })}
+      <div className="homePage-inscription">Login or Register to make a posting</div>
       {authData && authData._id && <AddPostBTN openAddPostEditor={openAddPostEditor} />}
       {addPostIsOpen && <AddPost openAddPostEditor={openAddPostEditor} />}
     </div>
