@@ -1,0 +1,163 @@
+@import '..//../SCSS/mixins.scss';
+@import '..//../SCSS/variables.scss';
+
+.addPost-wrapper {
+    width: 70%;
+    height: 60%;
+    @include gridBox(10, 1fr, 10, 1fr);
+    gap: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgb(66, 66, 66);
+    border-radius: 5px;
+
+}
+.defaultInput {
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px;
+}
+.addPost-titleField {
+    grid-column: 2/6;
+    grid-row: 2/3;
+    @extend .defaultInput
+}
+.addPost-textField {
+    grid-column: 1/12;
+    grid-row: 4/-3;
+    resize: none;
+    @extend .defaultInput;
+}
+.addPost-inscription {
+    font-family: $FontFamily;
+    color: $MainColor;
+    font-size: $LargeFontSize;
+    grid-column: 8/10;
+    grid-row: 2/3;
+}
+.addPost-postInstractions{
+    @extend .addPost-inscription;
+    margin-top: 10px;
+    grid-column: 4/8;
+    grid-row: 10/-1;
+}
+.addPost-uploadBTN {
+    border: none;
+    border-radius: 5px;
+    color: darkgrey;
+    grid-row: 2/3;
+    grid-column: 7/8;
+}
+.addPost-closeBTN {
+    color:  white;
+    grid-row: 1/2;
+    grid-column: 10/-1;
+    justify-self: center;
+    align-self: end;
+}
+.imageUploadment-inscription {
+    color: rgb(16, 216, 16);
+    font-size: $MediumFontSize;
+    grid-row: 3/4;
+    grid-column: 7/9;
+}
+
+.addPost-error-wrapper {
+    grid-row: 9/10;
+    grid-column: 1/8;
+    display: flex;
+    justify-content: space-evenly;
+}
+.addPost-errorMessage {
+    color: rgb(240, 75, 75);
+    font-size: $MediumFontSize;
+}
+
+@media screen and (max-width: $MediumDeviseSize) {
+    .addPost-titleField {
+        grid-column: 1/6;
+        margin-left: 5px;
+    }
+
+    .addPost-inscription {
+        font-size: $MediumFontSize;
+        grid-column: 9/-1;
+    }
+
+    .addPost-postInstractions {
+        margin-top: 5px;
+        grid-column: 2/-1;
+        grid-row: 9/-1;
+    }
+
+    .addPost-uploadBTN {
+        font-size: $SmallFontSize;
+        grid-column: 6/9;
+    }
+
+    .imageUploadment-inscription {
+        font-size: $DefaultFontSize;
+        grid-row: 3/4;
+        grid-column: 7/9;
+    }
+
+    .addPost-error-wrapper {
+        grid-row: 9/10;
+        grid-column: 1/-1;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .addPost-errorMessage {
+        font-size: $MediumFontSize;
+    }
+}
+
+@media screen and (max-width: $SmallDeviseSize) {
+    .addPost-titleField {
+            grid-column: 1/-1;
+        }
+    
+        .addPost-inscription {
+            font-size: 12px;
+            margin: 10px 0 0 10px;
+            grid-column: 1/-1;
+            grid-row: 1/2;
+        }
+    
+        .addPost-postInstractions {
+            margin-top: 5px;
+            grid-column: 2/-1;
+            grid-row: 9/-1;
+        }
+    
+        .addPost-uploadBTN {
+            font-size: $SmallFontSize;
+            grid-column: 1/8;
+            grid-row: 3/4;
+        }
+    
+        .imageUploadment-inscription {
+            font-size: $DefaultFontSize;
+            grid-row: 3/4;
+            grid-column: 8/-1;
+        }
+    
+        .addPost-error-wrapper {
+            grid-row: 9/10;
+            grid-column: 1/-1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .addPost-errorMessage {
+            font-size: $SmallFontSize;
+        }
+        .addPost-closeBTN {
+            font-size: $MediumFontSize;
+        }
+}

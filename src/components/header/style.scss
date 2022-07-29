@@ -1,0 +1,122 @@
+@import '..//../SCSS/mixins.scss';
+@import '..//../SCSS/variables.scss';
+
+.header-wrapper {
+    @include box(100%, 10vh, $MainColor, flex, space-between, center);
+    color: $SecondaryColor;
+}
+.header-logo {
+    @include box(10%, fit-content, none, flex, center, center);
+    a {
+        font-size: $LargeFontSize;
+        margin-left: 5px;
+        
+    }
+    &:hover {
+        a {
+            color: $HoverColor
+        }
+    }    
+}
+
+.header-auth {
+    @include box(20%, 100%, none, flex, center, center);
+    .header-auth-wrapper {
+    @include box(100%, 100%, none, flex, flex-end, center);
+        gap: 10px;
+        a {
+            font-size: $LargeFontSize;
+        }
+        .header-register,
+        .header-mePage {
+            &:hover {
+                a {
+                    color: $HoverColor
+                }
+            }    
+        }
+                
+        .header-logout-btn,
+        .header-login-btn {
+            @include box(50%, fit-content, none, flex, center, center);
+            
+            a {
+                margin-right: 5px;
+            }
+            font-size: $LargeFontSize;
+            &:hover {
+                &, a {
+                    color: $HoverColor;
+                    cursor: pointer;
+                }
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width: $SmallDeviseSize) {
+    .header-logo {
+        @include box(30%, fit-content, none, flex, center, center);
+        a {
+            font-size: $DefaultFontSize;
+        }
+        }
+    .header-auth {
+    @include box(50%, 100%, none, flex, center, center);
+        .header-auth-wrapper {
+            @include box(100%, 100%, none, flex, flex-end, center);
+            a {
+                font-size: $DefaultFontSize;
+            }
+            .header-logout-btn,
+            .header-login-btn {
+                @include box(50%, fit-content, none, flex, center, center);
+
+                font-size: $DefaultFontSize;
+            }
+        }
+    }
+}
+@media screen and (min-width: $SmallDeviseSize ) and (max-width: $MediumDeviseSize ){
+    .header-logo {
+        @include box(25%, fit-content, none, flex, center, center);
+        a {
+            font-size: $BigFontSize;
+        }
+    }
+
+    .header-auth {
+        @include box(50%, 100%, none, flex, center, center);
+        .header-auth-wrapper {
+            @include box(100%, 100%, none, flex, flex-end, center);
+            a {
+                font-size: $LargeFontSize;
+            }
+            .header-register,
+            .header-mePage {
+                &:hover {
+                    a {
+                        color: $HoverColor
+                    }
+                }
+            }
+            .header-logout-btn,
+            .header-login-btn {
+                @include box(50%, fit-content, none, flex, center, center);
+                a {
+                    margin-right: 5px;
+                }
+                font-size: $LargeFontSize;
+                &:hover {
+                    &,
+                    a {
+                        color: $HoverColor;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+        }
+    }
+}

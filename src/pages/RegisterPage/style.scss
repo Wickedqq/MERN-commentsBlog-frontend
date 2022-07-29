@@ -1,0 +1,68 @@
+@import '..//../SCSS/index.scss';
+@import '..//../SCSS/mixins.scss';
+@import '..//../SCSS/variables.scss';
+
+.register-wrapper {
+    @include box(100%, 90vh, silver, flex, center, center);
+    opacity: 0.6;
+    font-family: $FontFamily;
+}
+.registerForm-wrapper {
+    @include gridBox(1, 1fr, 11, 1fr);
+    width: 300px;
+    height: 500px;
+    background-color: bisque;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px
+}
+.register-inscription {
+    align-self: center;
+    justify-self: center;
+    font-size: $LargeFontSize;
+    font-weight: bold;
+    padding: 10px;
+    grid-row: 1/2;
+}
+.register-avatarInput{
+    @include box(100px, 100px, white, flex, center, center);
+    justify-self: center;
+    border-radius: 50%;
+    border: 1px solid black;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    grid-row: 2/4;
+}
+.name-registerInput{
+    @extend .default-input;
+    grid-row: 4/6;
+}
+.email-registerInput {
+    @extend .default-input;
+    grid-row: 6/8;
+}
+.password-registerInput {
+    @extend .default-input;
+    grid-row: 8/10;
+}
+.LoginBtn {
+    border: none;
+    border-radius: 5px;
+    background-color: blue;
+    color: $MainColor;
+    font-size: $LargeFontSize;
+    grid-row: 10/12;
+}
+
+.auth-error-message {
+    font-size: $MediumFontSize;
+    color: red;
+    grid-row: 8/9;
+}
+
+.name-registerInput-error,
+.email-registerInput-error,
+.password-registerInput-error {
+    @extend .error-input
+}

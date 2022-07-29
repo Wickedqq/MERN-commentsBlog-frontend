@@ -1,0 +1,17 @@
+@mixin box($width:fit-content, $height:fit-content, $BGC, $display, $jc, $ai) {
+    width: $width;
+    height: $height;
+    background-color: $BGC;
+    display: $display;
+    justify-content: $jc;
+    align-items: $ai;
+}
+@mixin gridBox($colums, $columnWidth, $rows, $rowWidth) {
+    display: grid;
+    grid-template-columns: repeat($colums, $columnWidth);
+    grid-auto-rows: $rowWidth;
+    @if ($rows) {
+        grid-template-rows: repeat($rows, $rowWidth);
+    }
+}
+

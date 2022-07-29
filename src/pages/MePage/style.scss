@@ -1,0 +1,44 @@
+@import '..//../SCSS/mixins.scss';
+@import '..//../SCSS/variables.scss';
+
+.MePage-wrapper {
+    @include box(100%, fit-content, none, flex, center, flex-start)
+}
+
+.MePage-infoContainer {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    height: fit-content;
+    font-size: $LargeFontSize;
+    font-weight: bolder;
+    padding: 20px;
+    span:first-child {
+        margin-bottom: 15px
+        
+    }
+}
+
+.MePage-image {
+    width: 200px;
+    height: 200px;
+}
+        
+.MePage-posts {
+    @include gridBox(1, 1fr, 0, 250px);
+    width: 70%;
+}
+
+@media screen and (max-width: $MediumDeviseSize) {
+    .MePage-image {
+        width: 100px;
+        height: 100px;
+    }
+    .MePage-name {
+        font-size: $SmallFontSize;
+    }
+
+    .MePage-email {
+        font-size: $SmallFontSize;
+    }
+}

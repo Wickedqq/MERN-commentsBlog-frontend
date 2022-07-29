@@ -1,0 +1,28 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+
+.router-link {
+    text-decoration: none;
+    color: $SecondaryColor;
+}
+.default-input {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding-left: 20px;
+}
+.error-input {
+    @extend .default-input;
+    border: 1px solid red;
+    &:after {
+        content: "The End";
+        position: relative;
+        top: 20px;
+        width: 10px;
+        height: 10px;
+        color: red;
+        font-size: 10px;
+        background-color: aqua;
+    }
+}
