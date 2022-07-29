@@ -47,7 +47,7 @@ export const HomePage = () => {
         );
       })}
       <div className="homePage-inscription">
-        {posts.length
+        {!posts.length
           ? 'To make a first comment here, you need to either login or register'
           : 'Login or Register to make a posting'}
       </div>
