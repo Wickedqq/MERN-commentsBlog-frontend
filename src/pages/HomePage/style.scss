@@ -15,4 +15,7 @@
     font-size: $BigFontSize;
     font-family: $FontFamily;
     color: $MainColor;
+    &:hover {
+        color: $HoverColor;
+    }
 }

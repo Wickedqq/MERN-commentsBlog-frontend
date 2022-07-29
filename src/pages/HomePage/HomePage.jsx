@@ -46,7 +46,11 @@ export const HomePage = () => {
           />
         );
       })}
-      <div className="homePage-inscription">Login or Register to make a posting</div>
+      <div className="homePage-inscription">
+        {posts.length
+          ? 'To make a first comment here, you need to either login or register'
+          : 'Login or Register to make a posting'}
+      </div>
       {authData && authData._id && <AddPostBTN openAddPostEditor={openAddPostEditor} />}
       {addPostIsOpen && <AddPost openAddPostEditor={openAddPostEditor} />}
     </div>
