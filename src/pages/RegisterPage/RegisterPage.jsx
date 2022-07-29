@@ -116,7 +116,7 @@ export const RegisterPage = () => {
         />
 
         {authData && (
-          <span className="auth-error-message">
+          <span className="registerAuth-error-message">
             {authData.message || authData.emailMessege}
             <br />
             <br />

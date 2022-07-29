@@ -70,7 +70,7 @@ export const LoginPage = () => {
         />
 
         {authData && (
-          <span className="auth-error-message">
+          <span className="loginAuth-error-message">
             {authData.message || authData.emailMessege}
             <br />
             <br />
