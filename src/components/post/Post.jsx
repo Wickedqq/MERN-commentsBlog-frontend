@@ -22,7 +22,7 @@ export const Post = ({ post, title, text, author, image, userId, postId }) => {
       {imageExist ? (
         <div className="post-image">
           <img
-            src={`http://localhost:3030${image}`}
+            src={`${process.env.REACT_APP_API_URL}${image}`}
             alt="unable to load"
             width="100%"
             height="100%"

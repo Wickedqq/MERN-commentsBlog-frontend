@@ -4,12 +4,12 @@ import axios from 'axios';
 // Posts
 
 export const fetchPosts = createAsyncThunk('fetchPosts', async () => {
-  const { data } = await axios.get('http://localhost:3030/posts');
+  const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/posts`);
   return data;
 });
 
 export const makePosting = createAsyncThunk('makePost', async ({ token, sendData }) => {
-  const res = await axios.post('http://localhost:3030/posts', sendData, {
+  const res = await axios.post(`${process.env.REACT_APP_API_URL}/posts`, sendData, {
     headers: {
       authorization: `Bearer ${token}`,
     },
@@ -37,11 +37,15 @@ export const makePosting = createAsyncThunk('makePost', async ({ token, sendData
 });
 
 export const editPost = createAsyncThunk('editPost', async ({ token, editedPostid, sendData }) => {
-  const res = await axios.patch(`http://localhost:3030/posts/${editedPostid}`, sendData, {
-    headers: {
-      authorization: `Bearer ${token}`,
+  const res = await axios.patch(
+    `${process.env.REACT_APP_API_URL}/posts/${editedPostid}`,
+    sendData,
+    {
+      headers: {
+        authorization: `Bearer ${token}`,
+      },
     },
-  });
+  );
 
   if (Array.isArray(res.data)) {
     const responceArray = res.data;
@@ -65,7 +69,7 @@ export const editPost = createAsyncThunk('editPost', async ({ token, editedPosti
 });
 
 export const deletePost = createAsyncThunk('deletePost', async ({ postId, token }) => {
-  const { data } = await axios.delete(`http://localhost:3030/posts/${postId}`, {
+  const { data } = await axios.delete(`${process.env.REACT_APP_API_URL}/posts/${postId}`, {
     headers: {
       authorization: `Bearer ${token}`,
     },
@@ -77,7 +81,7 @@ export const deletePost = createAsyncThunk('deletePost', async ({ postId, token 
 // Auth
 
 export const fetchUserData = createAsyncThunk('fetchUserData', async (userLoginData) => {
-  const res = await axios.post('http://localhost:3030/authicate/login', userLoginData);
+  const res = await axios.post(`${process.env.REACT_APP_API_URL}/authicate/login`, userLoginData);
 
   if (Array.isArray(res.data)) {
     const responceArray = res.data;
@@ -100,7 +104,10 @@ export const fetchUserData = createAsyncThunk('fetchUserData', async (userLoginD
 });
 
 export const PostUserData = createAsyncThunk('PostUserData', async (userRegisterData) => {
-  const res = await axios.post('http://localhost:3030/authicate/register', userRegisterData);
+  const res = await axios.post(
+    `${process.env.REACT_APP_API_URL}/authicate/register`,
+    userRegisterData,
+  );
 
   if (Array.isArray(res.data)) {
     const responceArray = res.data;
@@ -126,7 +133,7 @@ export const PostUserData = createAsyncThunk('PostUserData', async (userRegister
 });
 
 export const getIsAuth = createAsyncThunk('getMe', async (token) => {
-  const { data } = await axios.get('http://localhost:3030/me', {
+  const { data } = await axios.get(`${process.env.REACT_APP_API_URL}/me`, {
     headers: {
       authorization: `Bearer ${token}`,
     },

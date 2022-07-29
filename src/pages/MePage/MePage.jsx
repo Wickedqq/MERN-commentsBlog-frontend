@@ -38,7 +38,7 @@ export const MePage = () => {
             <img
               width="100%"
               height="100%"
-              src={`http://localhost:3030${authData.avatar}`}
+              src={`${process.env.REACT_APP_API_URL}${authData.avatar}`}
               alt="unable to load your avatar"
             />
           </div>

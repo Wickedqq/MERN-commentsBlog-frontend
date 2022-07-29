@@ -48,7 +48,7 @@ export const RegisterPage = () => {
       const formData = new FormData();
       const file = event.target.files[0];
       formData.append('image', file);
-      const { data } = await axios.post('http://localhost:3030/uploads', formData);
+      const { data } = await axios.post(`${process.env.REACT_APP_API_URL}/uploads`, formData);
       console.log(data);
       setUserAvatarURL(data.url);
     } catch (err) {
@@ -68,7 +68,7 @@ export const RegisterPage = () => {
         <div className="register-avatarInput" onClick={() => avatarinputRef.current.click()}>
           {userAvatarURL ? (
             <img
-              src={`http://localhost:3030${userAvatarURL}`}
+              src={`${process.env.REACT_APP_API_URL}${userAvatarURL}`}
               alt="unable to load"
               width="100%"
               height="100%"
