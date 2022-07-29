@@ -59,6 +59,7 @@
     font-size: $MediumFontSize;
     color: red;
     grid-row: 9/11;
+    overflow-y: auto;
 }
 
 .name-registerInput-error,
